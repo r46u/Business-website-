@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>R46U Business</title>
+
+  <!-- Font Awesome for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
   <style>
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -58,8 +65,43 @@
     footer {
       background: #111;
       color: #fff;
-      padding: 15px;
+      padding: 20px;
       text-align: center;
+    }
+    footer a {
+      color: #f39c12;
+      text-decoration: none;
+      margin-left: 8px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Floating Icons */
+    .floating-whatsapp,
+    .floating-instagram {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 999;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .floating-instagram {
+      background: #e1306c;
+      bottom: 80px; /* above WhatsApp */
+    }
+    .floating-whatsapp {
+      background: #25D366;
+    }
+    .floating-whatsapp:hover,
+    .floating-instagram:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -71,9 +113,9 @@
 
   <nav>
     <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <section class="hero">
@@ -93,12 +135,38 @@
 
   <section class="section" id="contact">
     <h2>Contact Us</h2>
-    <p>Email: support@r46u.com</p>
-    <p>Phone: +91 90000 00000</p>
+    <p>Email: uday46cr7@gmail.com</p>
+    <p>Phone: +91 9361639430</p>
   </section>
 
   <footer>
     <p>© 2025 R46U Business. All rights reserved.</p>
+    <p>
+      <i class="fab fa-instagram"></i>
+      <a href="https://instagram.com/loyal__king_r4u" target="_blank">
+        Follow us on Instagram
+      </a>
+    </p>
   </footer>
+
+  <!-- Floating WhatsApp Icon -->
+  <a
+    href="https://wa.me/919361639430"
+    class="floating-whatsapp"
+    target="_blank"
+    aria-label="WhatsApp"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Floating Instagram Icon -->
+  <a
+    href="https://instagram.com/loyal__king_r4u"
+    class="floating-instagram"
+    target="_blank"
+    aria-label="Instagram"
+  >
+    <i class="fab fa-instagram"></i>
+  </a>
 </body>
 </html>
