@@ -150,8 +150,25 @@
       transform: scale(1.1);
     }
   </style>
-</head>
+<a href="https://wa.me/YOUR_NUMBER" class="whatsapp-float" target="_blank">
+  <img src="whatsapp-icon.png" alt="Chat with us" />
+</a>
 
+<style>
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+</style>
+</head>
 <body>
   <!-- Manga Intro -->
   <section class="intro" id="intro">
