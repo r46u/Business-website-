@@ -5,79 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>R46U Business</title>
 
-  <!-- Font Awesome for Icons -->
+  <!-- Font Awesome for icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
   <style>
+    :root {
+      --bg: #f4f4f4;
+      --text: #333;
+      --heading: #4169e1;
+    }
+
+    body.dark-mode {
+      --bg: #121212;
+      --text: #ffffff;
+    }
+
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      transition: all 0.3s ease;
     }
+
     body {
-      background: #f9f9f9;
-      color: #333;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
+
     header {
-      background: #111;
+      background: #2c3e50;
       color: #fff;
-      padding: 20px;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 24px;
+      position: relative;
+    }
+
+    /* Dark mode toggle button */
+    .toggle-btn {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    nav {
+      background: #34495e;
+      padding: 10px 0;
       text-align: center;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #222;
-      padding: 10px 0;
-    }
+
     nav a {
       color: #fff;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
-      color: #f39c12;
-    }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: #fff;
-    }
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 18px;
-      color: #666;
-    }
+
     .section {
       padding: 40px 20px;
       text-align: center;
     }
+
     .section h2 {
-      margin-bottom: 20px;
-      color: #444;
-    }
-    footer {
-      background: #111;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    footer a {
-      color: #f39c12;
-      text-decoration: none;
-      margin-left: 8px;
-    }
-    footer a:hover {
-      text-decoration: underline;
+      color: var(--heading);
     }
 
-    /* Floating Icons */
     .floating-whatsapp,
     .floating-instagram {
       position: fixed;
@@ -92,62 +97,60 @@
       text-align: center;
       transition: transform 0.2s ease;
     }
+
     .floating-instagram {
       background: #e1306c;
-      bottom: 80px; /* above WhatsApp */
+      bottom: 80px;
     }
+
     .floating-whatsapp {
       background: #25D366;
     }
+
     .floating-whatsapp:hover,
     .floating-instagram:hover {
       transform: scale(1.1);
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>R46U Business</h1>
-    <p>We build your digital future.</p>
+  <header data-aos="fade-down">
+    R46U Business
+    <button class="toggle-btn" onclick="toggleDarkMode()" title="Toggle dark mode">
+      <i id="theme-icon" class="fas fa-moon"></i>
+    </button>
   </header>
 
-  <nav>
-    <a href="#">Home</a>
+  <nav data-aos="fade-up">
+    <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section class="hero">
-    <h1>Welcome to R46U</h1>
+  <section class="section" id="home" data-aos="fade-up">
+    <h2>Welcome to R46U</h2>
     <p>Your trusted partner for web and tech solutions.</p>
   </section>
 
-  <section class="section" id="about">
-    <h2>About Us</h2>
-    <p>We help businesses grow online by building modern, responsive websites and apps.</p>
+  <section class="section" id="about" data-aos="fade-right">
+  <h2>About Us</h2>
+  <p>At <strong>R46U Business</strong>, we believe every idea has the power to change the world.</p>
+  <p>Started with a passion for design and technology, we now help individuals and brands build their online presence with confidence. Whether it’s your first website or your next big project, we’re here to make it look and feel amazing.</p>
+  <p>Our goal is simple — deliver work that makes you proud and your audience impressed.</p>
   </section>
 
-  <section class="section" id="services">
+  <section class="section" id="services" data-aos="zoom-in">
     <h2>Our Services</h2>
     <p>Website Design · App Development · SEO · Hosting</p>
   </section>
 
-  <section class="section" id="contact">
+  <section class="section" id="contact" data-aos="fade-left">
     <h2>Contact Us</h2>
     <p>Email: uday46cr7@gmail.com</p>
     <p>Phone: +91 9361639430</p>
   </section>
-
-  <footer>
-    <p>© 2025 R46U Business. All rights reserved.</p>
-    <p>
-      <i class="fab fa-instagram"></i>
-      <a href="https://instagram.com/loyal__king_r4u" target="_blank">
-        Follow us on Instagram
-      </a>
-    </p>
-  </footer>
 
   <!-- Floating WhatsApp Icon -->
   <a
@@ -168,5 +171,18 @@
   >
     <i class="fab fa-instagram"></i>
   </a>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      const icon = document.getElementById("theme-icon");
+      icon.classList.toggle("fa-moon");
+      icon.classList.toggle("fa-sun");
+    }
+  </script>
 </body>
 </html>
