@@ -2,19 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>R46U Business</title>
 
-  <!-- Font Awesome for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-
-  <!-- AOS Animation CSS -->
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <style>
@@ -31,15 +24,59 @@
 
     * {
       transition: all 0.3s ease;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
       background: var(--bg);
       color: var(--text);
     }
 
+    /* --- MANGA INTRO --- */
+    .intro {
+      height: 100vh;
+      background: url('public/intro1.png') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      padding-bottom: 50px;
+    }
+
+    .intro h1 {
+      color: white;
+      font-size: 2.5rem;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .enter-btn {
+      background: royalblue;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .enter-btn:hover {
+      background: #274dcb;
+    }
+
+    #main-site {
+      display: none;
+    }
+
+    /* --- HEADER & NAV --- */
     header {
       background: #2c3e50;
       color: #fff;
@@ -49,7 +86,6 @@
       position: relative;
     }
 
-    /* Dark mode toggle button */
     .toggle-btn {
       position: absolute;
       right: 20px;
@@ -81,8 +117,10 @@
 
     .section h2 {
       color: var(--heading);
+      margin-bottom: 10px;
     }
 
+    /* --- FLOATING ICONS --- */
     .floating-whatsapp,
     .floating-instagram {
       position: fixed;
@@ -115,64 +153,61 @@
 </head>
 
 <body>
-  <header data-aos="fade-down">
-    R46U Business
-    <button class="toggle-btn" onclick="toggleDarkMode()" title="Toggle dark mode">
-      <i id="theme-icon" class="fas fa-moon"></i>
-    </button>
-  </header>
-
-  <nav data-aos="fade-up">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section class="section" id="home" data-aos="fade-up">
-    <h2>Welcome to R46U</h2>
-    <p>Your trusted partner for web and tech solutions.</p>
+  <!-- Manga Intro -->
+  <section class="intro" id="intro">
+    <h1>Scroll Through Our Story</h1>
+    <button class="enter-btn" onclick="enterSite()">Enter the Site</button>
   </section>
 
-  <section class="section" id="about" data-aos="fade-right">
-  <h2>About Us</h2>
-  <p>At <strong>R46U Business</strong>, we believe every idea has the power to change the world.</p>
-  <p>Started with a passion for design and technology, we now help individuals and brands build their online presence with confidence. Whether it’s your first website or your next big project, we’re here to make it look and feel amazing.</p>
-  <p>Our goal is simple — deliver work that makes you proud and your audience impressed.</p>
-  </section>
+  <!-- Main Site -->
+  <div id="main-site">
+    <header data-aos="fade-down">
+      R46U Business
+      <button class="toggle-btn" onclick="toggleDarkMode()" title="Toggle dark mode">
+        <i id="theme-icon" class="fas fa-moon"></i>
+      </button>
+    </header>
 
-  <section class="section" id="services" data-aos="zoom-in">
-    <h2>Our Services</h2>
-    <p>Website Design · App Development · SEO · Hosting</p>
-  </section>
+    <nav data-aos="fade-up">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <section class="section" id="contact" data-aos="fade-left">
-    <h2>Contact Us</h2>
-    <p>Email: uday46cr7@gmail.com</p>
-    <p>Phone: +91 9361639430</p>
-  </section>
+    <section class="section" id="home" data-aos="fade-up">
+      <h2>Welcome to R46U</h2>
+      <p>Your trusted partner for web and tech solutions.</p>
+    </section>
 
-  <!-- Floating WhatsApp Icon -->
-  <a
-    href="https://wa.me/919361639430"
-    class="floating-whatsapp"
-    target="_blank"
-    aria-label="WhatsApp"
-  >
-    <i class="fab fa-whatsapp"></i>
-  </a>
+    <section class="section" id="about" data-aos="fade-right">
+      <h2>About Us</h2>
+      <p>At <strong>R46U Business</strong>, we believe every idea has the power to change the world.</p>
+      <p>Started with a passion for design and technology, we now help individuals and brands build their online presence with confidence. Whether it’s your first website or your next big project, we’re here to make it look and feel amazing.</p>
+      <p>Our goal is simple — deliver work that makes you proud and your audience impressed.</p>
+    </section>
 
-  <!-- Floating Instagram Icon -->
-  <a
-    href="https://instagram.com/loyal__king_r4u"
-    class="floating-instagram"
-    target="_blank"
-    aria-label="Instagram"
-  >
-    <i class="fab fa-instagram"></i>
-  </a>
+    <section class="section" id="services" data-aos="zoom-in">
+      <h2>Our Services</h2>
+      <p>Website Design · App Development · SEO · Hosting</p>
+    </section>
 
-  <!-- AOS Animation JS -->
+    <section class="section" id="contact" data-aos="fade-left">
+      <h2>Contact Us</h2>
+      <p>Email: uday46cr7@gmail.com</p>
+      <p>Phone: +91 9361639430</p>
+    </section>
+
+    <!-- Floating Icons -->
+    <a href="https://wa.me/919361639430" class="floating-whatsapp" target="_blank" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://instagram.com/loyal__king_r4u" class="floating-instagram" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000, once: true });
@@ -183,6 +218,13 @@
       icon.classList.toggle("fa-moon");
       icon.classList.toggle("fa-sun");
     }
+
+    function enterSite() {
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("main-site").style.display = "block";
+      window.scrollTo({ top: 0 });
+    }
   </script>
 </body>
 </html>
+    
